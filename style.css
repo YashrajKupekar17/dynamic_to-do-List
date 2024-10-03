@@ -1,0 +1,210 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --background-color: #ecf0f1;
+    --text-color: #34495e;
+    --border-color: #bdc3c7;
+    --task-bg-color: #f9f9f9;
+}
+
+.dark-mode {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --background-color: #2c3e50;
+    --text-color: #ecf0f1;
+    --border-color: #7f8c8d;
+    --task-bg-color: #34495e;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--task-bg-color);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    transition: background-color 0.3s ease;
+}
+
+h1 {
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.add-category {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.add-category input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px 0 0 4px;
+    background-color: var(--task-bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.add-category button {
+    padding: 10px 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.category {
+    background-color: var(--task-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    margin-bottom: 20px;
+    padding: 15px;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.category-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.category-actions button {
+    background-color: transparent;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-left: 10px;
+    transition: color 0.3s ease;
+}
+
+.add-task {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.add-task input, .add-task select {
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    margin-right: 5px;
+    background-color: var(--task-bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.add-task input[type="text"] {
+    flex-grow: 1;
+}
+
+.add-task button {
+    padding: 8px 15px;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sort-options {
+    margin-bottom: 10px;
+}
+
+.sort-options button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.task {
+    background-color: var(--task-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    margin-bottom: 5px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.task-info {
+    flex-grow: 1;
+}
+
+.task-actions button {
+    background-color: transparent;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-left: 10px;
+    transition: color 0.3s ease;
+}
+
+.high-priority {
+    border-left: 5px solid #e74c3c;
+}
+
+.medium-priority {
+    border-left: 5px solid #f39c12;
+}
+
+.low-priority {
+    border-left: 5px solid #2ecc71;
+}
+
+.dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-10px); }
+}
+
+.fade-out {
+    animation: fadeOut 0.5s ease-out forwards;
+}
